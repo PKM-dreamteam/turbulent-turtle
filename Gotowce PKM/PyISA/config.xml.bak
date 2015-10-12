@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<root date="04/27/15 12:44:17">
+		<Switchers quantity="14">
+			<switcher address="1" mapX="0" mapY="0" state="Left" zone="Srzyża">IN - Prawy tor PKM 
+OUT_L - Prawy tor PKM na podjeździe
+OUT_R [prosto] - Most torowy PKM/dalekobieżny</switcher>
+			<switcher address="1" mapX="0" mapY="0" state="Right" zone="Wrzeszcz">IN = tor dalekobiezny lewy
+OUT_L = przejazdowka na tor dalekobiezny prawy
+OUT_R [prosto] = tor dalekobiezny lewy </switcher>
+			<switcher address="2" mapX="0" mapY="0" state="Right" zone="Srzyża">IN = prawy tor PKM
+OUT_L [prosto] = tor na Banino
+OUT_R  = prawy tor PKM</switcher>
+			<switcher address="2" mapX="0" mapY="0" state="Right" zone="Wrzeszcz">IN = tor PKM lewy 
+OUT_L [prosto] =  tor PKM lewy
+OUT_R = przejazdowka na dalekobiezny lewy</switcher>
+			<switcher address="13" mapX="0" mapY="0" state="Right" zone="Wrzeszcz">IN = PKM Most/ Dalekobieżny prawy
+OUT_L [prosto] = dalekobieżny prawy
+OUT_R = przejazdówka na dalekobieżny lewy</switcher>
+			<switcher address="14" mapX="0" mapY="0" state="Right" zone="Wrzeszcz">IN = Tor dalekobieżny prawy
+OUT_L = Tor dalekobieżny prawy
+OUT_R [prosto] = PKM most</switcher>
+			<switcher address="25" mapX="0" mapY="0" state="Left" zone="Wrzeszcz">IN = Pzejazdówka PKM lewy/PKM prawy
+OUT_L = PKM Prawy
+OUT_R [prosto] = PKM Lewy</switcher>
+			<switcher address="26" mapX="0" mapY="0" state="Right" zone="Wrzeszcz">IN = PKM Prawy
+OUT_L = PKM Prawy
+OUT_R [prosto] = Przejazdówka PKM prawy/ PK lewy</switcher>
+			<switcher address="37" mapX="0" mapY="0" state="Right" zone="Wrzeszcz">IN = Dalekobieżny prawy
+OUT_L = Dalekobieżny prawy (przejazdówka)
+OUT_R [prosto] = Dalekobieżny lewy</switcher>
+			<switcher address="38" mapX="0" mapY="0" state="Left" zone="Wrzeszcz">IN = Dalekobieżbny Lewy
+OUT_L = Dalekobieżny Lewy
+OUT_R [prosto] = Dalekobieżny prawy</switcher>
+			<switcher address="39" mapX="0" mapY="0" state="Left" zone="Wrzeszcz">IN = Dalekobieżny lewy
+OUT_L = Dalekobieżny Lewy
+OUT_R [prosto] = PKM PRawy</switcher>
+			<switcher address="509" mapX="0" mapY="0" state="Right" zone="None">Niepodpiety</switcher>
+			<switcher address="510" mapX="0" mapY="0" state="Right" zone="None">Niepodpiety</switcher>
+			<switcher address="511" mapX="0" mapY="0" state="Right" zone="None">Niepodpiety</switcher>
+		</Switchers>
+		<Wigwags quantity="14">
+			<wigwag address="1" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="Srzyża">Wigwag on PKM track</wigwag>
+			<wigwag address="2" mapX="0" mapY="0" state="[1, 0, 0, 0, 0]" zone="Srzyża">Wigwag on PKM track</wigwag>
+			<wigwag address="298" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="299" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="314" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="315" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="330" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="331" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="346" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="347" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="394" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="395" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="410" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+			<wigwag address="411" mapX="0" mapY="0" state="[0, 0, 0, 0, 0]" zone="None">Wigwag on PKM track</wigwag>
+		</Wigwags>
+		<Balises quantity="14">
+			<balisa address="298" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="299" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="314" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="315" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="330" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="331" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="346" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="347" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="394" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="395" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="410" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="411" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="522" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+			<balisa address="523" mapX="0" mapY="0" state="[0, 0]" zone="None">Balisa on PKM track</balisa>
+		</Balises>
+	</root>

@@ -1,0 +1,47 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imags/tracks.png</file>
+        <file>imags/connection/virconnectedB.png</file>
+        <file>imags/connection/virconnected.png</file>
+        <file>imags/connection/disconnectedB.png</file>
+        <file>imags/connection/disconnected.png</file>
+        <file>imags/connection/connectedB.png</file>
+        <file>imags/connection/connected.png</file>
+        <file>imags/background.png</file>
+        <file>imags/fall.png</file>
+        <file>imags/icons/eurobalisa.png</file>
+        <file>imags/icons/switcher.png</file>
+        <file>imags/icons/train.png</file>
+        <file>imags/icons/wigwag.png</file>
+        <file>imags/logo/ksdir.png</file>
+        <file>imags/logo/pg.png</file>
+        <file>imags/logo/pg_n.png</file>
+        <file>imags/logo/weti.png</file>
+        <file>imags/switchers/green.png</file>
+        <file>imags/switchers/left.png</file>
+        <file>imags/switchers/red.png</file>
+        <file>imags/switchers/right.png</file>
+        <file>imags/trains/tr1.png</file>
+        <file>imags/trains/tr2.png</file>
+        <file>imags/trains/tr3.png</file>
+        <file>imags/trains/tr4.png</file>
+        <file>imags/trains/tr5.png</file>
+        <file>imags/trains/tr6.png</file>
+        <file>imags/wigwag/dow_off.png</file>
+        <file>imags/wigwag/dow_red_blink.png</file>
+        <file>imags/wigwag/dow_white_off.png</file>
+        <file>imags/wigwag/dow_white_on.png</file>
+        <file>imags/wigwag/mid_off.png</file>
+        <file>imags/wigwag/mid_red_blink.png</file>
+        <file>imags/wigwag/mid_red_on.png</file>
+        <file>imags/wigwag/mid_yellow_blink.png</file>
+        <file>imags/wigwag/mid_yellow_on.png</file>
+        <file>imags/wigwag/top_green_blink.png</file>
+        <file>imags/wigwag/top_green_on.png</file>
+        <file>imags/wigwag/top_off.png</file>
+        <file>imags/wigwag/wigwag.png</file>
+        <file>imags/mush/mushA.png</file>
+        <file>imags/mush/mushB.png</file>
+        <file>imags/mush/mushBG.png</file>
+    </qresource>
+</RCC>

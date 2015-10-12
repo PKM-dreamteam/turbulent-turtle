@@ -1,0 +1,26 @@
+Wrzeszcz PKM Lewy - Kiełpinek Lewy
+	Switcher 2 switched to Left
+	Switcher 40 switched to Right
+	Switcher 41 switched to Left
+	Multiswicther straight
+	
+Wrzeszcz PKM Prawy - Strzyża Lewy 
+	Switcher 26 switched to Right
+	Switcher 39 switched to Right
+	Switcher 40 switched to Left
+	
+Dalekobieżny Lewy - Dalekobieżny Lewy (41.31 sec)
+	Switcher 1 switched to Right
+	Switcher 37 switched to Right
+	Switcher 38 switched to Right
+	
+Dalekobierżny Prawy - Dalekobieżny Lewy (41.35 sec)
+	Switcher 13 switched to Left
+	Switcher 14 switched to Left
+	Switcher 37 switched to Left
+	Switcher 38 switched to Right
+	
+Dalekobieżny Lewy - Strzyża Prawy (53 sec)
+	
+Strzyża Prawy - Kiełpinek Prawy (66.45 sec)
+Kiełpinek Prawy - Strzyża Lewy (64.31 tam, 66.78 sec powrót) 

@@ -1,0 +1,225 @@
+<?xml version="1.0" ?>
+<root>
+<switcher address="1" state="Left" zone="Strzyża"/>
+	<switcher address="1" state="Right" zone="Wrzeszcz"/>
+	<switcher address="2" state="Right" zone="Strzyża"/>
+	<switcher address="2" state="Left" zone="Wrzeszcz"/>
+	<switcher address="13" state="Left" zone="Wrzeszcz"/>
+	<switcher address="14" state="Left" zone="Wrzeszcz"/>
+	<switcher address="25" state="Left" zone="Wrzeszcz"/>
+	<switcher address="26" state="Right" zone="Wrzeszcz"/>
+	<switcher address="37" state="Left" zone="Wrzeszcz"/>
+	<switcher address="38" state="Left" zone="Wrzeszcz"/>
+	<switcher address="39" state="Left" zone="Wrzeszcz"/>
+	<switcher address="40" state="Left" zone="Wrzeszcz"/>
+	<switcher address="41" state="Right" zone="Wrzeszcz"/>
+	<multiswitcher address="1" state="Straight" zone="Kiełpinek"/>
+    <!-- train_2 start Wrzeszcz Dalekobieżny Prawy; 2 (przód) do słupa; trzeci od okna
+         train_1 start Kiełpinek Prawy; 1 w stronę Wrzeszcza; pierwszy od Galery -->
+    <sleep time = "1"/>
+    <train address = "1" velocity="5" direction="1" />
+    <train address = "2" velocity="5" direction="0" />
+	<sleep time = "53"/>
+    <train address = "2" velocity="0" direction="0" />
+    <sleep time = "26"/>
+    <train address = "1" velocity="0" direction="1" />
+
+    <sleep time = "5"/><!--Strzyża - stop; zmiana zwrotnic -->
+    <switcher address="41" state="Left" zone="Wrzeszcz"/>
+    <switcher address="40" state="Right" zone="Wrzeszcz"/>
+    <switcher address="2" state="Left" zone="Wrzeszcz"/>
+    <multiswitcher address="1" state="Straight" zone="Kiełpinek"/>
+
+
+    <train address = "1" velocity="5" direction="1" />
+    <train address = "2" velocity="5" direction="0" />
+    <sleep time = "42"/>
+    <train address = "1" velocity="0" direction="1" /> <!-- train_1 Lewy PKM Wrzeszcz -->
+    <sleep time = "27"/>
+    <train address = "2" velocity="0" direction="1" /> <!-- train_2 Prawy Kiełpinek-->
+
+    <!-- Zmiana zwrotnic -->
+	<switcher address="41" state="Right" zone="Wrzeszcz"/>
+    <switcher address="40" state="Right" zone="Wrzeszcz"/>
+    <switcher address="2" state="Left" zone="Wrzeszcz"/>
+    <multiswitcher address="1" state="Cross" zone="Kiełpinek"/>
+	<sleep time = "5"/>
+	<!-- train_1 Lewy Wrzeszcz -> Prawy Kiełpinek
+		 train_2 Prawy Kiełpinek -> Prawy Wrzeszcz --> 
+    
+    <train address = "1" velocity="5" direction="0" />
+    <train address = "2" velocity="5" direction="1" />
+    <sleep time = "41"/>
+    <train address = "1" velocity="0" direction="0" />
+	<sleep time = "21"/>
+    <train address = "2" velocity="0" direction="1" />
+	
+	<!-- Strzyża mijanka zmian zwrotnic -->
+	
+	<sleep time = "5"/>    
+	<multiswitcher address="1" state="Straight" zone="Kiełpinek"/>
+	<switcher address="41" state="Left" zone="Wrzeszcz"/>
+	<switcher address="40" state="Left" zone="Wrzeszcz"/>
+	<switcher address="39" state="Right" zone="Wrzeszcz"/>
+	<switcher address="26" state="Right" zone="Wrzeszcz"/>
+	
+	<train address = "1" velocity="5" direction="0" />
+    <train address = "2" velocity="5" direction="1" />
+	<sleep time = "36"/>
+	<train address = "2" velocity="0" direction="1" />	
+	<sleep time = "38"/>
+	<train address = "1" velocity="0" direction="0" />
+	<!-- train_1 Lewy Kiełpinek
+		 train_2 Prawy Wrzeszcz
+		 Petla do powtarzania
+	-->
+	<multiswitcher address="1" state="Cross" zone="Kiełpinek"/>
+	<switcher address="41" state="Right" zone="Wrzeszcz"/>
+	<switcher address="40" state="Left" zone="Wrzeszcz"/>
+	<switcher address="39" state="Right" zone="Wrzeszcz"/>
+	<switcher address="26" state="Right" zone="Wrzeszcz"/>
+
+	<train address = "1" velocity="5" direction="1" />
+    <train address = "2" velocity="5" direction="0" />
+	<sleep time = "40"/>
+	<train address = "2" velocity="0" direction="0" />
+    <sleep time = "40"/>
+    <train address = "1" velocity="0" direction="1" />
+	
+	<sleep time = "5"/><!--Strzyża - stop; zmiana zwrotnic -->
+    <switcher address="41" state="Left" zone="Wrzeszcz"/>
+    <switcher address="40" state="Right" zone="Wrzeszcz"/>
+    <switcher address="2" state="Left" zone="Wrzeszcz"/>
+    <multiswitcher address="1" state="Straight" zone="Kiełpinek"/>
+	
+	<train address = "1" velocity="5" direction="1" />
+    <train address = "2" velocity="5" direction="0" />
+    <sleep time = "42"/>
+    <train address = "1" velocity="0" direction="1" /> <!-- train_1 Lewy PKM Wrzeszcz -->
+    <sleep time = "27"/>
+    <train address = "2" velocity="0" direction="1" /> <!-- train_2 Prawy Kiełpinek-->
+	
+	
+    <!-- Zmiana zwrotnic -->
+	<switcher address="41" state="Right" zone="Wrzeszcz"/>
+    <switcher address="40" state="Right" zone="Wrzeszcz"/>
+    <switcher address="2" state="Left" zone="Wrzeszcz"/>
+    <multiswitcher address="1" state="Cross" zone="Kiełpinek"/>
+	<sleep time = "5"/>
+	<!-- train_1 Lewy Wrzeszcz -> Prawy Kiełpinek
+		 train_2 Prawy Kiełpinek -> Prawy Wrzeszcz --> 
+    
+    <train address = "1" velocity="5" direction="0" />
+    <train address = "2" velocity="5" direction="1" />
+    <sleep time = "41"/>
+    <train address = "1" velocity="0" direction="0" />
+	<sleep time = "21"/>
+    <train address = "2" velocity="0" direction="1" />
+	
+	<!-- Strzyża mijanka zmian zwrotnic -->
+	
+	<sleep time = "5"/>    
+	<multiswitcher address="1" state="Straight" zone="Kiełpinek"/>
+	<switcher address="41" state="Left" zone="Wrzeszcz"/>
+	<switcher address="40" state="Left" zone="Wrzeszcz"/>
+	<switcher address="39" state="Right" zone="Wrzeszcz"/>
+	<switcher address="26" state="Right" zone="Wrzeszcz"/>
+	
+	<train address = "1" velocity="5" direction="0" />
+    <train address = "2" velocity="5" direction="1" />
+	<sleep time = "36"/>
+	<train address = "2" velocity="0" direction="1" />	
+	<sleep time = "38"/>
+	<train address = "1" velocity="0" direction="0" />
+	<!-- train_1 Lewy Kiełpinek
+		 train_2 Prawy Wrzeszcz
+		 Petla do powtarzania
+	-->
+	<multiswitcher address="1" state="Cross" zone="Kiełpinek"/>
+	<switcher address="41" state="Right" zone="Wrzeszcz"/>
+	<switcher address="40" state="Left" zone="Wrzeszcz"/>
+	<switcher address="39" state="Right" zone="Wrzeszcz"/>
+	<switcher address="26" state="Right" zone="Wrzeszcz"/>
+
+	<train address = "1" velocity="5" direction="1" />
+    <train address = "2" velocity="5" direction="0" />
+	<sleep time = "40"/>
+	<train address = "2" velocity="0" direction="0" />
+    <sleep time = "40"/>
+    <train address = "1" velocity="0" direction="1" />
+	
+	<sleep time = "5"/><!--Strzyża - stop; zmiana zwrotnic -->
+    <switcher address="41" state="Left" zone="Wrzeszcz"/>
+    <switcher address="40" state="Right" zone="Wrzeszcz"/>
+    <switcher address="2" state="Left" zone="Wrzeszcz"/>
+    <multiswitcher address="1" state="Straight" zone="Kiełpinek"/>
+	
+	<train address = "1" velocity="5" direction="1" />
+    <train address = "2" velocity="5" direction="0" />
+    <sleep time = "42"/>
+    <train address = "1" velocity="0" direction="1" /> <!-- train_1 Lewy PKM Wrzeszcz -->
+    <sleep time = "25"/>
+    <train address = "2" velocity="0" direction="1" /> <!-- train_2 Prawy Kiełpinek-->
+	
+	
+    <!-- Zmiana zwrotnic -->
+	<switcher address="41" state="Right" zone="Wrzeszcz"/>
+    <switcher address="40" state="Right" zone="Wrzeszcz"/>
+    <switcher address="2" state="Left" zone="Wrzeszcz"/>
+    <multiswitcher address="1" state="Cross" zone="Kiełpinek"/>
+	<sleep time = "5"/>
+	<!-- train_1 Lewy Wrzeszcz -> Prawy Kiełpinek
+		 train_2 Prawy Kiełpinek -> Prawy Wrzeszcz --> 
+    
+    <train address = "1" velocity="5" direction="0" />
+    <train address = "2" velocity="5" direction="1" />
+    <sleep time = "41"/>
+    <train address = "1" velocity="0" direction="0" />
+	<sleep time = "21"/>
+    <train address = "2" velocity="0" direction="1" />
+	
+	<!-- Strzyża mijanka zmian zwrotnic -->
+	
+	<sleep time = "5"/>    
+	<multiswitcher address="1" state="Straight" zone="Kiełpinek"/>
+	<switcher address="41" state="Left" zone="Wrzeszcz"/>
+	<switcher address="40" state="Left" zone="Wrzeszcz"/>
+	<switcher address="39" state="Right" zone="Wrzeszcz"/>
+	<switcher address="26" state="Right" zone="Wrzeszcz"/>
+	
+	<train address = "1" velocity="5" direction="0" />
+    <train address = "2" velocity="5" direction="1" />
+	<sleep time = "36"/>
+	<train address = "2" velocity="0" direction="1" />	
+	<sleep time = "38"/>
+	<train address = "1" velocity="0" direction="0" />
+	<!-- train_1 Lewy Kiełpinek
+		 train_2 Prawy Wrzeszcz
+		 Petla do powtarzania
+	-->
+	<multiswitcher address="1" state="Cross" zone="Kiełpinek"/>
+	<switcher address="41" state="Right" zone="Wrzeszcz"/>
+	<switcher address="40" state="Left" zone="Wrzeszcz"/>
+	<switcher address="39" state="Right" zone="Wrzeszcz"/>
+	<switcher address="26" state="Right" zone="Wrzeszcz"/>
+
+	<train address = "1" velocity="5" direction="1" />
+    <train address = "2" velocity="5" direction="0" />
+	<sleep time = "40"/>
+	<train address = "2" velocity="0" direction="0" />
+    <sleep time = "40"/>
+    <train address = "1" velocity="0" direction="1" />
+	
+	<sleep time = "5"/><!--Strzyża - stop; zmiana zwrotnic -->
+    <switcher address="41" state="Left" zone="Wrzeszcz"/>
+    <switcher address="40" state="Right" zone="Wrzeszcz"/>
+    <switcher address="2" state="Left" zone="Wrzeszcz"/>
+    <multiswitcher address="1" state="Straight" zone="Kiełpinek"/>
+	
+	<train address = "1" velocity="5" direction="1" />
+    <train address = "2" velocity="5" direction="0" />
+    <sleep time = "42"/>
+    <train address = "1" velocity="0" direction="1" /> <!-- train_1 Lewy PKM Wrzeszcz -->
+    <sleep time = "25"/>
+    <train address = "2" velocity="0" direction="1" /> <!-- train_2 Prawy Kiełpinek-->
+</root>
