@@ -1,0 +1,10 @@
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\bin\x86\Debug\FourOfAKind.exe.config
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\bin\x86\Debug\FourOfAKind.exe
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\bin\x86\Debug\FourOfAKind.pdb
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\obj\x86\Debug\FourOfAKind.Properties.Resources.resources
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\obj\x86\Debug\FourOfAKind.csproj.GenerateResource.Cache
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\obj\x86\Debug\FourOfAKind.exe
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\obj\x86\Debug\FourOfAKind.pdb
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\obj\x86\Debug\FourOfAKind.csprojResolveAssemblyReference.cache
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\obj\x86\Debug\FourOfAKind.ConsoleForm.resources
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\FourOfAKind\FourOfAKind\obj\x86\Debug\FourOfAKind.mainForm.resources
