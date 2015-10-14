@@ -54,18 +54,16 @@ namespace FourOfAKind.Navigation
             this.Waypoints = new PointDouble[] { };
         }
 
-        public Track(int _ID, string _Name, int _Start, int _End, PointDouble[] _Waypoints = null)
+        public Track(int _ID, string _Name, int _Start, int _End, int _waypointsCount = 0, PointDouble[] _Waypoints = null)
         {
             this.ID = _ID;
             this.Name = _Name;
             this.Start = _Start;
             this.End = _End;
+            
+            this.Waypoints = new PointDouble[_waypointsCount];
 
-
-            if (_Waypoints == null)
-                this.Waypoints = new PointDouble[] { };
-            else
-                this.Waypoints = _Waypoints;
+            if (_Waypoints != null) this.Waypoints = _Waypoints;
         }
     }
 }

@@ -50,9 +50,9 @@ namespace FourOfAKind
         /// <param name="colorAll"></param>
         private void AddToConsole()
         {
-            while(parentForm.LogMessages.Count>0)
+            while(Log.LogMessages.Count>0)
             {
-                ConsoleMessage one = parentForm.LogMessages.First();
+                ConsoleMessage one = Log.LogMessages.First();
                 string consoleMessage = String.Empty;
 
                 switch (one.Type)
@@ -77,7 +77,7 @@ namespace FourOfAKind
                 if (!one.ColorAll) consoleMessage += @"\cf1";
                 consoleMessage += @"\tab " + one.Content + @"\par";
                 ConsoleRTFContents += consoleMessage;
-                parentForm.LogMessages.Remove(one);
+                Log.LogMessages.Remove(one);
             }
         }
     }

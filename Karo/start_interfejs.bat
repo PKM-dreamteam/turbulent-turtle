@@ -1,0 +1,1 @@
+start FourOfAKind\FourOfAKind\bin\x86\Debug\FourOfAKind.exe
