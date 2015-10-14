@@ -73,6 +73,7 @@
       <DependentUpon>ConsoleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsoleMessage.cs" />
+    <Compile Include="MapClasses\Map.cs" />
     <Compile Include="MapClasses\MapObjects.cs" />
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>

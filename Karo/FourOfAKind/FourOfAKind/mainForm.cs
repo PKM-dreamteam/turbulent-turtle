@@ -23,6 +23,9 @@ namespace FourOfAKind
         private long framesDrawn = 0;
         public List<ConsoleMessage> LogMessages = new List<ConsoleMessage>();
 
+        private Map PKMap;
+        private Point mapOffset = new Point(20, 20);
+
         /// <summary>
         /// Zapobiega migotaniu podczas rysowania
         /// </summary>
@@ -50,6 +53,23 @@ namespace FourOfAKind
             //Console.AddToConsole("Test wiadomości 1", "error");
             //Console.AddToConsole("Test wiadomości 1", "warning", false);
             //Console.AddToConsole("Test wiadomości 1", "info");
+
+            PKMap = new Map();
+            PKMap.Zoom = 2;
+
+            PKMap.Intersections.Add(new Intersection(1, "Test01", new PointDouble(0, 0)));
+            PKMap.Intersections.Add(new Intersection(2, "Test02", new PointDouble(20, 0)));
+            PKMap.Intersections.Add(new Intersection(3, "Test03", new PointDouble(40, 0)));
+            PKMap.Intersections.Add(new Intersection(4, "Test04", new PointDouble(0, 20)));
+            PKMap.Intersections.Add(new Intersection(5, "Test05", new PointDouble(0, 40)));
+            PKMap.Intersections.Add(new Intersection(6, "Test06", new PointDouble(60, 60)));
+
+            PKMap.Tracks.Add(new Track(1, "", 1, 2));
+            PKMap.Tracks.Add(new Track(2, "", 2, 3));
+            PKMap.Tracks.Add(new Track(3, "", 3, 6, new PointDouble[] { new PointDouble(60, 10), new PointDouble(65, 15), new PointDouble(68, 20), new PointDouble(70, 30), new PointDouble(68, 40), new PointDouble(65, 50) }));
+            PKMap.Tracks.Add(new Track(2, "", 5, 6));
+
+            PKMap.SaveToDir(Application.StartupPath);
         }
 
         public void AddToConsole(string message, string type = "default", bool colorAll = true)
@@ -83,16 +103,36 @@ namespace FourOfAKind
 
                 if(frameTime>0)
                 {
-                    graphicsObj.DrawString("FPS: " + String.Format("{0:0.00}", 1000.0 / (double)frameTime), myFont, myBrush, 10, 10);
+                    graphicsObj.DrawString("FPS: " + String.Format("{0:0.00}", 1000.0 / (double)frameTime), myFont, myBrush, 0, 0);
                 }
-                
+
+                Pen interPen = new Pen(Color.FromArgb(0,90,255), 2);
+                Font interFont = new System.Drawing.Font("Consolas", 10.0f, FontStyle.Regular, GraphicsUnit.Pixel);
+                foreach (Intersection one in PKMap.Intersections)
+                {
+                    Point spot = one.Location.getDrawingPoint(mapOffset, PKMap.Zoom);
+
+                    graphicsObj.DrawEllipse(interPen, new Rectangle(spot.X-2, spot.Y-2, 4, 4));
+                    graphicsObj.DrawString(one.Name, interFont, myBrush, spot.X+2, spot.Y+2);
+                }
+                interFont.Dispose();
+                interPen.Dispose();
 
 
+                Pen trackPen = new Pen(Color.FromArgb(30, 30, 30), 1);
+                foreach (Track one in PKMap.Tracks)
+                {
+                    List<Point> points = new List<Point>();
+                    points.Add(PKMap.getIntersectionByID(one.Start).Location.getDrawingPoint(mapOffset, PKMap.Zoom));
+                    foreach (PointDouble waypoint in one.Waypoints)
+                    {
+                        points.Add(waypoint.getDrawingPoint(mapOffset, PKMap.Zoom));
+                    }
+                    points.Add(PKMap.getIntersectionByID(one.End).Location.getDrawingPoint(mapOffset, PKMap.Zoom));
 
-
-
-
-
+                    graphicsObj.DrawLines(trackPen, points.ToArray());
+                }
+                trackPen.Dispose();
 
 
                 e.Graphics.DrawImage(one_frame, 0, 0);
@@ -111,6 +151,13 @@ namespace FourOfAKind
             catch (Exception ex)
             {
                 AddToConsole("Błąd rysowania mapy (line "+ ex.LineNumber().ToString()+ "): "+ex.Message, "error");
+            }
+        }
+
+        private void panelCanvas_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
             }
         }
 

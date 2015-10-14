@@ -8,7 +8,7 @@ using FourOfAKind.MapClasses;
 
 namespace FourOfAKind.Navigation
 {
-    class Intersection
+    public class Intersection
     {
         public int ID;
         public string Name;
@@ -36,26 +36,25 @@ namespace FourOfAKind.Navigation
         }
     }
 
-    class Track
+    public class Track
     {
         public int ID;
         public string Name;
-        public PointDouble Start;
-        public PointDouble End;
+        public int Start;
+        public int End;
 
-        public List<PointDouble> Waypoints;
+        public PointDouble[] Waypoints;
 
         public Track()
         {
             this.ID = -1;
             this.Name = "";
-            this.Start = new PointDouble();
-            this.End = new PointDouble();
-
-            this.Waypoints = new List<PointDouble>();
+            this.Start = -1;
+            this.End = -1;
+            this.Waypoints = new PointDouble[] { };
         }
 
-        public Track(int _ID, string _Name, PointDouble _Start, PointDouble _End, List<PointDouble> _Waypoints = null)
+        public Track(int _ID, string _Name, int _Start, int _End, PointDouble[] _Waypoints = null)
         {
             this.ID = _ID;
             this.Name = _Name;
@@ -64,7 +63,7 @@ namespace FourOfAKind.Navigation
 
 
             if (_Waypoints == null)
-                this.Waypoints = new List<PointDouble>();
+                this.Waypoints = new PointDouble[] { };
             else
                 this.Waypoints = _Waypoints;
         }

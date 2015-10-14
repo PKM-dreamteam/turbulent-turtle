@@ -7,8 +7,9 @@ using System.Drawing;
 
 namespace FourOfAKind.MapClasses
 {
-    class PointDouble
+    public class PointDouble
     {
+        private static Point zeroOffset = new Point(0,0);
         public double X;
         public double Y;
 
@@ -20,9 +21,21 @@ namespace FourOfAKind.MapClasses
             Y = _Y;
         }
 
-        public Point getDrawingPoint()
+        public Point getDrawingPoint(Point offset, double Zoom = 1.0)
         {
-            return new Point((int)Math.Round(this.X), (int)Math.Round(this.Y));
+            double tX = this.X * Zoom;
+            double tY = this.Y * Zoom;
+            if (offset == null)
+            {
+                return new Point((int)Math.Round(tX), (int)Math.Round(tY));
+            }
+            else
+            {
+                Point result = new Point((int)Math.Round(tX), (int)Math.Round(tY));
+                result.X += offset.X;
+                result.Y += offset.Y;
+                return result;
+            }
         }
     }
 }
