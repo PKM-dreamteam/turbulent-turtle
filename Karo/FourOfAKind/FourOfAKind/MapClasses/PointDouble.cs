@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Xml;
 
 namespace FourOfAKind.MapClasses
 {
@@ -61,6 +62,30 @@ namespace FourOfAKind.MapClasses
             double newY = this.Y * scalar;
 
             return new PointDouble(newX, newY);
+        }
+
+        public static bool ParseString(string input, out PointDouble output)
+        {
+            output = null;
+
+            try
+            {
+                string[] split = input.Split((";").ToArray());
+                if (split.Length == 2)
+                {
+                    PointDouble temp = new PointDouble();
+                    temp.X = XmlConvert.ToDouble(split[0]);
+                    temp.Y = XmlConvert.ToDouble(split[1]);
+                    output = temp;
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

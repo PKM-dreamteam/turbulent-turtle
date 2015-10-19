@@ -36,17 +36,17 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbRemove = new System.Windows.Forms.RadioButton();
             this.txtAddName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.rbAddTrack = new System.Windows.Forms.RadioButton();
             this.rbAddIntersection = new System.Windows.Forms.RadioButton();
             this.rbAddNone = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panelCanvas = new FourOfAKind.DoubleBufferPanel();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.panelCanvas = new FourOfAKind.DoubleBufferPanel();
-            this.rbRemove = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.mainContainer)).BeginInit();
             this.mainContainer.Panel1.SuspendLayout();
             this.mainContainer.Panel2.SuspendLayout();
@@ -152,6 +152,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dodaj/usuń";
             // 
+            // rbRemove
+            // 
+            this.rbRemove.AutoSize = true;
+            this.rbRemove.Location = new System.Drawing.Point(6, 135);
+            this.rbRemove.Name = "rbRemove";
+            this.rbRemove.Size = new System.Drawing.Size(72, 17);
+            this.rbRemove.TabIndex = 5;
+            this.rbRemove.Text = "Usuwanie";
+            this.rbRemove.UseVisualStyleBackColor = true;
+            // 
             // txtAddName
             // 
             this.txtAddName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -207,10 +217,26 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(226, 615);
+            this.tabPage2.Size = new System.Drawing.Size(226, 528);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panelCanvas
+            // 
+            this.panelCanvas.BackColor = System.Drawing.Color.White;
+            this.panelCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCanvas.Location = new System.Drawing.Point(0, 0);
+            this.panelCanvas.Name = "panelCanvas";
+            this.panelCanvas.Size = new System.Drawing.Size(704, 554);
+            this.panelCanvas.TabIndex = 0;
+            this.panelCanvas.TabStop = true;
+            this.panelCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCanvas_Paint);
+            this.panelCanvas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelCanvas_MouseClick);
+            this.panelCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCanvas_MouseDown);
+            this.panelCanvas.MouseHover += new System.EventHandler(this.panelCanvas_MouseHover);
+            this.panelCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCanvas_MouseMove);
+            this.panelCanvas.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.panelCanvas_PreviewKeyDown);
             // 
             // mainTimer
             // 
@@ -228,31 +254,6 @@
             // 
             this.saveFileDialog.DefaultExt = "txt";
             this.saveFileDialog.Filter = "Text files|*.txt";
-            // 
-            // panelCanvas
-            // 
-            this.panelCanvas.BackColor = System.Drawing.Color.White;
-            this.panelCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCanvas.Location = new System.Drawing.Point(0, 0);
-            this.panelCanvas.Name = "panelCanvas";
-            this.panelCanvas.Size = new System.Drawing.Size(704, 554);
-            this.panelCanvas.TabIndex = 0;
-            this.panelCanvas.TabStop = true;
-            this.panelCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCanvas_Paint);
-            this.panelCanvas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelCanvas_MouseClick);
-            this.panelCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCanvas_MouseDown);
-            this.panelCanvas.MouseHover += new System.EventHandler(this.panelCanvas_MouseHover);
-            this.panelCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCanvas_MouseMove);
-            // 
-            // rbRemove
-            // 
-            this.rbRemove.AutoSize = true;
-            this.rbRemove.Location = new System.Drawing.Point(6, 135);
-            this.rbRemove.Name = "rbRemove";
-            this.rbRemove.Size = new System.Drawing.Size(72, 17);
-            this.rbRemove.TabIndex = 5;
-            this.rbRemove.Text = "Usuwanie";
-            this.rbRemove.UseVisualStyleBackColor = true;
             // 
             // mainForm
             // 

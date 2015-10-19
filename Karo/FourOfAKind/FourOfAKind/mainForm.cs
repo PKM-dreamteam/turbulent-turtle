@@ -31,6 +31,7 @@ namespace FourOfAKind
         private Map PKMap;  // Główny obiekt mapy
 
         private Point mapPanStart = new Point(0, 0);
+        private string pointCoords = String.Empty;  // używane do wprowadzania położenia punktów z klawiatury
 
         /// <summary>
         /// Redukuje migotanie podczas rysowania
@@ -162,6 +163,14 @@ namespace FourOfAKind
                     //  Cursor position display
                     graphicsObj.DrawEllipse(myPen, drawMiddle.X + PKMap.CursorPos.X - 2, drawMiddle.Y + PKMap.CursorPos.Y - 2, 4, 4);
                     graphicsObj.DrawString(String.Format("{0:0.00}", PKMap.RealCursorPos.X) + ";" + String.Format("{0:0.00}", PKMap.RealCursorPos.Y), myFont, myBrush, drawMiddle.X + PKMap.CursorPos.X, drawMiddle.Y + PKMap.CursorPos.Y - 12);
+
+                    //  Keyboard input coordinates
+                    if (pointCoords != String.Empty)
+                    {
+                        SizeF textSize = graphicsObj.MeasureString(pointCoords, myFont);
+                        graphicsObj.DrawString(pointCoords, myFont, myBrush, panelCanvas.Width - textSize.Width - 5, panelCanvas.Height - textSize.Height - 5);
+                        graphicsObj.DrawRectangle(myPen, panelCanvas.Width - textSize.Width - 7, panelCanvas.Height - textSize.Height - 7, textSize.Width + 4, textSize.Height + 4);
+                    }
                 }
 
                 e.Graphics.DrawImage(one_frame, 0, 0);
@@ -195,6 +204,11 @@ namespace FourOfAKind
             redrawing = false;
         }
 
+        private void addToMap(string name)
+        {
+            
+        }
+
         /// <summary>
         /// Procedura obsługuje kliknięcia myszy w obszarze mapy. (kliknięcie to wciśniecie i puszczenie klawisza. Dla wciśnieć patrz MouseDown niżej...)
         /// </summary>
@@ -202,15 +216,17 @@ namespace FourOfAKind
         /// <param name="e"></param>
         private void panelCanvas_MouseClick(object sender, MouseEventArgs e)
         {
+            pointCoords = String.Empty;
             if (e.Button == MouseButtons.Left)
             {
                 Log.AddToConsole("MouseClick: Left", "info");
+
                 if (rbAddIntersection.Checked)
                 {
                     PKMap.Intersections.Add(new Intersection(PKMap.NextIntersectionID(), txtAddName.Text, PKMap.RealCursorPos));
                 }
 
-                if(rbAddTrack.Checked)
+                if (rbAddTrack.Checked)
                 {
                     if (PKMap.TrackStartID == -1)
                     {
@@ -226,7 +242,7 @@ namespace FourOfAKind
                             }
                         }
 
-                        if ( best != null )
+                        if (best != null)
                         {
                             PKMap.TrackStartID = best.ID;
                         }
@@ -259,7 +275,7 @@ namespace FourOfAKind
                     }
                 }
 
-                if(rbRemove.Checked)
+                if (rbRemove.Checked)
                 {
                     double min = 2;
                     Intersection bestInter = null;
@@ -308,23 +324,6 @@ namespace FourOfAKind
                         PKMap.Tracks.Remove(bestTrack);
                     }
 
-                }
-            }
-
-            if(e.Button == MouseButtons.Right)
-            {
-                Log.AddToConsole("MouseClick: Right", "info");
-                if (rbAddTrack.Checked)
-                {
-                    if (PKMap.TrackPoints.Count > 0)
-                    {
-                        PKMap.TrackPoints.RemoveAt(PKMap.TrackPoints.Count - 1);
-                    }
-                    else
-                    {
-                        PKMap.TrackStartID = -1;
-                        PKMap.TrackPoints = new List<PointDouble>();
-                    }
                 }
             }
         }
@@ -381,6 +380,118 @@ namespace FourOfAKind
                 //  Zapamietanie wartości offsetu do przyszłych obliczeń podczas przesuwania widoku
                 mapPanStart = e.Location;
                 PKMap.TempOffset = PKMap.Offset;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void panelCanvas_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            Log.AddToConsole(e.KeyCode.ToString() + ": " + e.KeyValue.ToString());
+            if (e.KeyValue >= 48 && e.KeyValue <= 57)
+            {
+                pointCoords += (char)(e.KeyValue);
+            }
+            else if (e.KeyCode == Keys.OemMinus)
+            {
+                pointCoords += "-";
+            }
+            else if (e.KeyCode == Keys.OemSemicolon)
+            {
+                pointCoords += ";";
+            }
+            else if (e.KeyCode == Keys.OemPeriod || e.KeyCode == Keys.Oemcomma)
+            {
+                pointCoords += ".";
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                if (pointCoords.Length > 0) pointCoords = pointCoords.Substring(0, pointCoords.Length - 1);
+            }
+            else if(e.KeyCode == Keys.Delete)
+            {
+                Log.AddToConsole("Delete point", "info");
+                if (rbAddTrack.Checked)
+                {
+                    if (PKMap.TrackPoints.Count > 0)
+                    {
+                        PKMap.TrackPoints.RemoveAt(PKMap.TrackPoints.Count - 1);
+                    }
+                    else
+                    {
+                        PKMap.TrackStartID = -1;
+                        PKMap.TrackPoints = new List<PointDouble>();
+                    }
+                }
+            }
+            else if(e.KeyCode == Keys.Enter)
+            {
+                PointDouble enteredPos = null;
+                if (PointDouble.ParseString(pointCoords, out enteredPos))
+                {
+                    if (rbAddIntersection.Checked)
+                    {
+                        PKMap.Intersections.Add(new Intersection(PKMap.NextIntersectionID(), txtAddName.Text, enteredPos));
+                    }
+
+                    if (rbAddTrack.Checked)
+                    {
+                        if (PKMap.TrackStartID == -1)
+                        {
+                            double min = 2;
+                            Intersection best = null;
+                            foreach (Intersection one in PKMap.Intersections)
+                            {
+                                double dist = one.Location.CalcDistance(enteredPos);
+                                if (dist < min)
+                                {
+                                    best = one;
+                                    min = dist;
+                                }
+                            }
+
+                            if (best != null)
+                            {
+                                PKMap.TrackStartID = best.ID;
+                            }
+                        }
+                        else
+                        {
+                            double min = 2;
+                            Intersection best = null;
+                            foreach (Intersection one in PKMap.Intersections)
+                            {
+                                if (one.ID == PKMap.TrackStartID) continue;
+                                double dist = one.Location.CalcDistance(enteredPos);
+                                if (dist < min)
+                                {
+                                    best = one;
+                                    min = dist;
+                                }
+                            }
+
+                            if (best != null)
+                            {
+                                PKMap.Tracks.Add(new Track(PKMap.NextTrackID(), txtAddName.Text, PKMap.TrackStartID, best.ID, PKMap.TrackPoints.Count, PKMap.TrackPoints.ToArray()));
+                                PKMap.TrackStartID = -1;
+                                PKMap.TrackPoints = new List<PointDouble>();
+                            }
+                            else
+                            {
+                                PKMap.TrackPoints.Add(enteredPos);
+                            }
+                        }
+                    }
+
+                    pointCoords = String.Empty;
+                }
+                else
+                {
+                    Log.AddToConsole("Błąd podczas parsowania pozycji", "error");
+                }
             }
         }
 

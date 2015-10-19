@@ -81,7 +81,7 @@ namespace FourOfAKind.Navigation
                 if (one.Location.Y > bottom) bottom = one.Location.Y;
             }
 
-            this.Offset = new PointDouble(-sumX / numX, -sumY / numY);
+            this.Offset = new PointDouble(-sumX / numX, -sumY / numY);  
 
             double width = right - left + 10;
             double height = bottom - top + 10;
