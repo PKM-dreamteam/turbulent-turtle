@@ -1,0 +1,46 @@
+Należy zweryfikować układ bitów w bajcie. Czy pierwszy jest LSB czy MSB?
+
+Zmienne wielobajtowe zorganizowane są w standardzie BigEndian czyli najważniejszy BAJT pierwszy.
+
+
+Length:		42
+ID:			100
+timestamp:	1234567890	ms
+x:			2000		mm
+y:			3415		mm
+z:			24			mm
+velocity:	142			mm/s
+
+Test data pack:
+0x1A	01011000
+
+0x64	00100110
+
+0x00	00000000
+0x00	00000000
+0x00	00000000
+0x00	00000000
+0x49	10010010
+0x96	01101001
+0x02	01000000
+0xD2	01001011
+
+0x00	00000000
+0x00	00000000
+0x07	11100000
+0xD0	00001011
+
+0x00	00000000
+0x00	00000000
+0x0D	10110000
+0x57	11101010
+
+0x00	00000000
+0x00	00000000
+0x00	00000000
+0x18	00011000
+
+0x00	00000000
+0x00	00000000
+0x00	00000000
+0x8E	01110001
