@@ -16,6 +16,25 @@ namespace Server
         public Form1()
         {
             InitializeComponent();
+
+
+            DataPack testPack = new DataPack(100, 1234567890, 200.0, 341.5, 2.4, 14.23);
+
+
+            string dataStr = "";
+
+            foreach (byte one in testPack.ToByteArray())
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    if (DataPack.GetBit(one, i))
+                        dataStr += "1";
+                    else
+                        dataStr += "0";
+                }
+            }
+
+            Console.WriteLine("Test data pack:\n" + dataStr);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,6 +76,11 @@ namespace Server
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

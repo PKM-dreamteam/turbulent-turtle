@@ -20,6 +20,7 @@ public class ServerThread
     public void Start()
     {
         serverThread = new Thread(new ThreadStart(ReceivePackets));
+        serverThread.IsBackground = true;
         serverThread.Start();
     }
 
@@ -46,6 +47,7 @@ public class ServerThread
                     //receiveData = Encoding.ASCII.GetString(receive_byte_array, 0, receive_byte_array.Length);
                     receiveData = new DataPack(receive_byte_array);
                     DataPackList.Add(receiveData);
+                    Console.WriteLine(receiveData.ToString());
                 }      
             }
         

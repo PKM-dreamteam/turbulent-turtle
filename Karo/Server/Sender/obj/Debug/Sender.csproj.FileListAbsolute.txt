@@ -9,3 +9,21 @@ c:\Users\Weronika\documents\visual studio 2015\Projects\Server\Sender\obj\Debug\
 c:\Users\Weronika\documents\visual studio 2015\Projects\Server\Sender\obj\Debug\Sender.pdb
 C:\Users\Weronika\Documents\Visual Studio 2015\Projects\Server\Sender\bin\Debug\Server.exe
 C:\Users\Weronika\Documents\Visual Studio 2015\Projects\Server\Sender\bin\Debug\Server.pdb
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\Sender.exe.config
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\Sender.exe
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\Sender.pdb
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\mscorlib.dll
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\Server.exe
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\Server.pdb
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\pl\mscorlib.resources.dll
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\normidna.nlp
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\normnfc.nlp
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\normnfd.nlp
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\normnfkc.nlp
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\bin\Debug\normnfkd.nlp
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\obj\Debug\Sender.csprojResolveAssemblyReference.cache
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\obj\Debug\Sender.Form1.resources
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\obj\Debug\Sender.Properties.Resources.resources
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\obj\Debug\Sender.csproj.GenerateResource.Cache
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\obj\Debug\Sender.exe
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\obj\Debug\Sender.pdb

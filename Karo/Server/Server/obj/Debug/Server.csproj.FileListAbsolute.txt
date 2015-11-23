@@ -7,3 +7,19 @@ c:\users\weronika\documents\visual studio 2015\Projects\Server\Server\obj\Debug\
 c:\users\weronika\documents\visual studio 2015\Projects\Server\Server\obj\Debug\Server.csproj.GenerateResource.Cache
 c:\users\weronika\documents\visual studio 2015\Projects\Server\Server\obj\Debug\Server.exe
 c:\users\weronika\documents\visual studio 2015\Projects\Server\Server\obj\Debug\Server.pdb
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\Server.exe.config
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\obj\Debug\Server.exe
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\obj\Debug\Server.pdb
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\obj\Debug\Server.Form1.resources
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\Server.exe
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\Server.pdb
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\mscorlib.dll
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\pl\mscorlib.resources.dll
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\normidna.nlp
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\normnfc.nlp
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\normnfd.nlp
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\normnfkc.nlp
+C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Server\bin\Debug\normnfkd.nlp
