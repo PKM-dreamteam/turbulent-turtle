@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitOps.cs" />
     <Compile Include="ConsoleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +74,7 @@
       <DependentUpon>ConsoleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsoleMessage.cs" />
+    <Compile Include="DataPack.cs" />
     <Compile Include="DBP.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -88,6 +90,7 @@
     <Compile Include="MapClasses\PointDouble.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerThread.cs" />
     <EmbeddedResource Include="ConsoleForm.resx">
       <DependentUpon>ConsoleForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -27,6 +27,7 @@ namespace FourOfAKind
                                 + @"\red150\green0\blue0;"          // cf2 - Error color
                                 + @"\red200\green170\blue0;"        // cf3 - Warning color
                                 + @"\red40\green90\blue170;"        // cf4 - Info color
+                                + @"\red0\green140\blue20;"        // cf5 - Server color
                                 + @"}"
                                 + @"\tx1800\fs20";
                                 //+ @"\viewkind4\uc1\pard\cf1\lang1033\f0\fs17";
@@ -68,6 +69,9 @@ namespace FourOfAKind
                         break;
                     case "info":
                         consoleMessage = @"\cf4";
+                        break;
+                    case "server":
+                        consoleMessage = @"\cf5";
                         break;
                     default:
                         consoleMessage = @"\cf1";

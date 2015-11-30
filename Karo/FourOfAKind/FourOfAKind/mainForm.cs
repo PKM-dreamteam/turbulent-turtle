@@ -33,6 +33,8 @@ namespace FourOfAKind
         private Point mapPanStart = new Point(0, 0);
         private string pointCoords = String.Empty;  // używane do wprowadzania położenia punktów z klawiatury
 
+        ServerThread server = new ServerThread();
+
         /// <summary>
         /// Redukuje migotanie podczas rysowania
         /// </summary>
@@ -62,6 +64,8 @@ namespace FourOfAKind
             PKMap.RecalcBounds(panelCanvas.Size);
 
             this.panelCanvas.MouseWheel += panelCanvas_MouseWheel;
+
+            server.Start(this);
         }
 
         /// <summary>
@@ -171,6 +175,23 @@ namespace FourOfAKind
                         graphicsObj.DrawString(pointCoords, myFont, myBrush, panelCanvas.Width - textSize.Width - 5, panelCanvas.Height - textSize.Height - 5);
                         graphicsObj.DrawRectangle(myPen, panelCanvas.Width - textSize.Width - 7, panelCanvas.Height - textSize.Height - 7, textSize.Width + 4, textSize.Height + 4);
                     }
+
+
+                    // Last pos on map
+                    Pen dataPen = new Pen(Color.FromArgb(160, 30, 0), 2);
+                    Font dataFont = new System.Drawing.Font("Consolas", 10.0f, FontStyle.Regular, GraphicsUnit.Pixel);
+
+                    if(server.DataPackList.Count > 0)
+                    {
+                        DataPack one = server.GetLastDataPack();
+                        PointDouble p = new PointDouble((double)one.x / 10.0, (double)one.y / 10.0);
+                        int circleRadius = 5;
+                        graphicsObj.DrawEllipse(dataPen, p.getDrawingPoint(drawMiddle, PKMap.Offset, PKMap.Zoom).X - circleRadius,p.getDrawingPoint(drawMiddle, PKMap.Offset, PKMap.Zoom).Y - circleRadius, 2* circleRadius, 2* circleRadius);
+
+                    }
+
+                    dataFont.Dispose();
+                    dataPen.Dispose();
                 }
 
                 e.Graphics.DrawImage(one_frame, 0, 0);
