@@ -18,23 +18,9 @@ namespace Server
             InitializeComponent();
 
 
-            DataPack testPack = new DataPack(100, 1234567890, 200.0, 341.5, 2.4, 14.23);
+            DataPack testPack = new DataPack(100, 1234567890, 2000, 3415, 24, 142);
 
-
-            string dataStr = "";
-
-            foreach (byte one in testPack.ToByteArray())
-            {
-                for (int i = 0; i < 8; i++)
-                {
-                    if (DataPack.GetBit(one, i))
-                        dataStr += "1";
-                    else
-                        dataStr += "0";
-                }
-            }
-
-            Console.WriteLine("Test data pack:\n" + dataStr);
+            DataPack.PrintHex(testPack.ToByteArray(), "Test data pack");
         }
 
         private void button1_Click(object sender, EventArgs e)

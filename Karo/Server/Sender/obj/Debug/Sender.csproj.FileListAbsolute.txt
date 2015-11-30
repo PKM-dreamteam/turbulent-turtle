@@ -27,3 +27,14 @@ C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-mas
 C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\obj\Debug\Sender.csproj.GenerateResource.Cache
 C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\obj\Debug\Sender.exe
 C:\Users\Karolina\Documents\0studia\turbulent-turtle-master\turbulent-turtle-master\Karo\Server\Sender\obj\Debug\Sender.pdb
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\bin\Debug\Sender.exe.config
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\obj\Debug\Sender.exe
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\obj\Debug\Sender.pdb
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\bin\Debug\Sender.exe
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\bin\Debug\Sender.pdb
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\bin\Debug\Server.exe
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\bin\Debug\Server.pdb
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\obj\Debug\Sender.csprojResolveAssemblyReference.cache
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\obj\Debug\Sender.Form1.resources
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\obj\Debug\Sender.Properties.Resources.resources
+C:\Users\Robson\Documents\GitHub\turbulent-turtle\Karo\Server\Sender\obj\Debug\Sender.csproj.GenerateResource.Cache
