@@ -184,7 +184,7 @@ int main(int argc, char *argv[])
 							float g_x = coordSystem->localToGlobalCoordXInversed(imgProc->centroid.x * 10 / 7 + imgProc->Xmin);
 							float g_y = coordSystem->localToGlobalCoordYInversed(imgProc->centroid.y * 10 / 7 + imgProc->Ymin);
 
-							float g_v = coordSystem->localToGlobalLength(norm(imgProc->v) * 10 / 7);
+							float g_v = coordSystem->localToGlobalLengthF(norm(imgProc->v)) * 10 / 7;
 
 							int tick = GetTickCount();
 							if (tick_before != 0)
@@ -287,6 +287,10 @@ int main(int argc, char *argv[])
 				coordSystem->endCoordSetup();
 			else
 				coordSystem->startCoordSetup();
+		}
+		else if (k == 'x' || k == 'X')
+		{
+			imgProc->smallModel = !imgProc->smallModel;
 		}
 		else if (k == 27) //exit program
 		{

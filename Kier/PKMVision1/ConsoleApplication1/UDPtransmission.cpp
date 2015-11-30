@@ -40,8 +40,6 @@ void UDPtrans::sendPacket(double x, double y, double v)
 	byte packetlength = 42;
 
 	std::time_t timestamp = std::time(nullptr);
-	
-	printf("Przed: %d %d %f %f %f %f\n", IdVision, packetlength, x, y, z, v);
 
 	const char* xBytes = reinterpret_cast<const char*>(&x);
 	const char* yBytes = reinterpret_cast<const char*>(&y);
@@ -51,25 +49,19 @@ void UDPtrans::sendPacket(double x, double y, double v)
 	const char* idBytes = reinterpret_cast<const char*>(&IdVision);
 	const char* timeBytes = reinterpret_cast<const char*>(&timestamp);
 
-	printf("Po: %d %d %d %d %d %d\n", *idBytes, *lenBytes, *xBytes, *yBytes, *zBytes, *vBytes);
-
 	char* buff;
 	int a = 42;
 
 	buff = new char[a];
 
-	printf("Dl pakietu: %d %d %d %d %d %d %d %d\n", strlen(lenBytes), strlen(idBytes),
-		strlen(timeBytes), strlen(xBytes), strlen(yBytes),
-		strlen(zBytes), strlen(vBytes), a);
-	strcpy(buff, lenBytes);
-	strcat(buff, idBytes);
-	strcat(buff, timeBytes);
-	strcat(buff, xBytes);
-	strcat(buff, yBytes);
-	strcat(buff, zBytes);
-	strcat(buff, vBytes);
+	memcpy(buff, lenBytes, 1);
+	memcpy(buff+1, idBytes, 1);
+	memcpy(buff+2, timeBytes, 8);
+	memcpy(buff+10, xBytes, 8);
+	memcpy(buff+18, yBytes, 8);
+	memcpy(buff+26, zBytes, 8);
+	memcpy(buff+34, vBytes, 8);
 
-	printf("%s\n", buff);
 	//send the message
 	if (sendto(s, buff, 42, 0, (struct sockaddr *) &si_other, slen) == SOCKET_ERROR)
 	{

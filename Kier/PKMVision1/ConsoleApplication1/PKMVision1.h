@@ -48,7 +48,7 @@ public:
 	cv::Mat gimg0, gimg, fgmask, fgimg, bgimg; //gmm
 	cv::Mat flow, prevGray; // optFlow
 
-	// centroid of estimated position of PKM model
+	// centroid for estimated position of PKM model
 	cv::Point2d centroid;
 	cv::Point2d prev_centroid;
 
@@ -63,6 +63,9 @@ public:
 
 	//flag to notify that model position is found
 	bool modelPosition;
+
+	//flag to notify that small model is used
+	bool smallModel;
 
 	float rescale = 0.7;
 	int startDelay; // delay processing X frames (some algorithms may need it)

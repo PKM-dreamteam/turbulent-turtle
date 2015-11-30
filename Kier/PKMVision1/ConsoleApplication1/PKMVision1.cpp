@@ -32,6 +32,7 @@ PKMVision01::PKMVision01(int flag){
 	opticalType = 2;
 	openOpticalFlowWindowAndType = 0;
 	opticalFlow_isInit = false;
+	smallModel = false;
 }
 
 PKMVision01::~PKMVision01(){}
@@ -117,8 +118,14 @@ void PKMVision01::gmm(Mat* frame, bool smooth)
 
 	// max size is 90% of total foreground size
 	int max_size = fgmask.size().area() * 9 / 10;
-	// min size is 1% of total foreground size
-	int min_size = fgmask.size().area() / 100;
+
+	int min_size;
+	//if small model is used, then min size is 1 pixel
+	if (smallModel)
+		min_size = 1;
+	//if large model is used, then min size is 1% of total foreground size
+	else
+		min_size = fgmask.size().area() / 100;
 
 	// Check if there is a component, that has correct size
 	// if there is, get the maximum
