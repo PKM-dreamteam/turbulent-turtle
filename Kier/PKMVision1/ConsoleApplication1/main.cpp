@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	char* camAddr="";
 
 	if (argc < 2) {
-		camAddr = "C:\\projekty_cpp\\PKMVision1\\Release\\test1.avi";
+		camAddr = "C:\\projekty\\turbulent-turtle-master\\Kier\\PKMVision1\\Release\\test1.avi";
 		camType = 0;
 	}else if (argc == 3){
 		camAddr = argv[1];
@@ -181,17 +181,23 @@ int main(int argc, char *argv[])
 
 						if (coordSystem->isSetupDone())
 						{
-							float g_x = coordSystem->localToGlobalCoordXInversed(imgProc->centroid.x * 10 / 7 + imgProc->Xmin);
-							float g_y = coordSystem->localToGlobalCoordYInversed(imgProc->centroid.y * 10 / 7 + imgProc->Ymin);
+							float g_x = coordSystem->localToGlobalCoordXInversed((imgProc->centroid.x * 10 / 7) + imgProc->Xmin);
+							float g_y = coordSystem->localToGlobalCoordYInversed((imgProc->centroid.y * 10 / 7) + imgProc->Ymin);
 
-							float g_v = coordSystem->localToGlobalLengthF(norm(imgProc->v)) * 10 / 7;
+							// calculating speed
+							int v_x = imgProc->centroid.x - imgProc->prev_centroid.x;
+							int v_y = imgProc->centroid.y - imgProc->prev_centroid.y;
+
+							double v = sqrt((v_x * v_x) + (v_y * v_y));
+
+							float g_v = coordSystem->localToGlobalLengthF(v * 10.0 / 7.0);
 
 							int tick = GetTickCount();
 							if (tick_before != 0)
 							{
 								int timediff = tick - tick_before;
-								udp->sendPacket(g_x, g_y, g_v / ((float)timediff/1000));
-								printf("%f %f %f\n", g_x, g_y, g_v / ((float)timediff / 1000));
+								udp->sendPacket((int)(g_x * 1000), (int)(g_y*1000), g_v / ((float)timediff/1000));
+								//printf("%f(x) %f(y) %f(v) %f(v/t)\n", g_x, g_y, g_v, (g_v / ((float)timediff / 1000)));
 							}
 							tick_before = tick;
 						}
@@ -311,7 +317,9 @@ int main(int argc, char *argv[])
 				else if (coordSystem->getState() == CoordSys::GET_LOCAL_LINE_B)
 					coordSystem->setLocalLineB(imgProc->mParams.mouseXY);
 				else if (coordSystem->getState() == CoordSys::SET_GLOBAL_AB)
+				{
 					coordSystem->setGlobalLineABLength(10);
+				}
 
 				coordSystem->nextState();
 
@@ -319,6 +327,7 @@ int main(int argc, char *argv[])
 				{
 					coordSystem->setSetupDone();
 					coordSystem->endCoordSetup();
+					//printf("%f\n\n", coordSystem->localToGlobalLengthF(1));
 				}
 			}
 		}

@@ -142,6 +142,7 @@ void CoordSys::computePixelLength()
 {
 	float localLength = (float)sqrt((localLineA.x - localLineB.x)*(localLineA.x - localLineB.x) + (localLineA.y - localLineB.y)*(localLineA.y - localLineB.y));
 	cmPerPixel = globalLineABLength / localLength;
+	printf("local length: %f cmPerPixel: %f", localLength, cmPerPixel);
 }
 
 void CoordSys::computeGlobalInLocalX0Y0()

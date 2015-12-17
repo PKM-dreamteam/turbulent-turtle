@@ -33,37 +33,47 @@ UDPtrans::~UDPtrans()
 	WSACleanup();
 }
 
-void UDPtrans::sendPacket(double x, double y, double v)
+
+// reversing bytes of multi-byte memcpy
+void UDPtrans::reverse_memcpy(char* dest, const byte* source, int length)
 {
-	float z = 0;
+	for (int i = 0; i < length; i++)
+	{
+		memcpy(dest + i, source + (length - (i + 1)), 1);
+	}
+}
+
+void UDPtrans::sendPacket(int x, int y, int v)
+{
+	int z = 0;
 	byte IdVision = 100;
-	byte packetlength = 42;
+	byte packetlength = 26;
 
 	std::time_t timestamp = std::time(nullptr);
 
-	const char* xBytes = reinterpret_cast<const char*>(&x);
-	const char* yBytes = reinterpret_cast<const char*>(&y);
-	const char* vBytes = reinterpret_cast<const char*>(&v);
-	const char* zBytes = reinterpret_cast<const char*>(&z);
-	const char* lenBytes = reinterpret_cast<const char*>(&packetlength);
-	const char* idBytes = reinterpret_cast<const char*>(&IdVision);
-	const char* timeBytes = reinterpret_cast<const char*>(&timestamp);
+	const byte* xBytes = reinterpret_cast<const byte*>(&x);
+	const byte* yBytes = reinterpret_cast<const byte*>(&y);
+	const byte* vBytes = reinterpret_cast<const byte*>(&v);
+	const byte* zBytes = reinterpret_cast<const byte*>(&z);
+	const byte* lenBytes = reinterpret_cast<const byte*>(&packetlength);
+	const byte* idBytes = reinterpret_cast<const byte*>(&IdVision);
+	const byte* timeBytes = reinterpret_cast<const byte*>(&timestamp);
 
 	char* buff;
-	int a = 42;
+	int a = 26;
 
 	buff = new char[a];
-
+	
 	memcpy(buff, lenBytes, 1);
-	memcpy(buff+1, idBytes, 1);
-	memcpy(buff+2, timeBytes, 8);
-	memcpy(buff+10, xBytes, 8);
-	memcpy(buff+18, yBytes, 8);
-	memcpy(buff+26, zBytes, 8);
-	memcpy(buff+34, vBytes, 8);
+	memcpy(buff + 1, idBytes, 1);
+	reverse_memcpy(buff + 2, timeBytes, 8);
+	reverse_memcpy(buff + 10, xBytes, 4);
+	reverse_memcpy(buff + 14, yBytes, 4);
+	reverse_memcpy(buff + 18, zBytes, 4);
+	reverse_memcpy(buff + 22, vBytes, 4);
 
 	//send the message
-	if (sendto(s, buff, 42, 0, (struct sockaddr *) &si_other, slen) == SOCKET_ERROR)
+	if (sendto(s, buff, 26, 0, (struct sockaddr *) &si_other, slen) == SOCKET_ERROR)
 	{
 		printf("sendto() failed with error code : %d", WSAGetLastError());
 		exit(EXIT_FAILURE);
