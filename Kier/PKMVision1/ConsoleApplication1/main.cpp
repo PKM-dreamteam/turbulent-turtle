@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	char* camAddr="";
 
 	if (argc < 2) {
-		camAddr = "C:\\projekty\\turbulent-turtle-master\\Kier\\PKMVision1\\Release\\test1.avi";
+		camAddr = "C:\\git\\turbulent-turtle\\Kier\\PKMVision1\\Release\\test1.avi";
 		camType = 0;
 	}else if (argc == 3){
 		camAddr = argv[1];
@@ -309,16 +309,49 @@ int main(int argc, char *argv[])
 				if (coordSystem->getState() == CoordSys::GET_LOCAL_XY)
 					coordSystem->setLocalKnownPoint(imgProc->mParams.mouseXY);
 				else if (coordSystem->getState() == CoordSys::SET_GLOBAL_X)
-					coordSystem->setGlobalKnownPointX(26);
+				{
+					double x = atof(coordSystem->getBuffer().c_str());
+					if (x != 0.0)
+					{
+						coordSystem->setGlobalKnownPointX(x);
+						printf("\n Known point X:%f\n", x);
+					}
+					else
+					{
+						coordSystem->endCoordSetup();
+						coordSystem->startCoordSetup();
+					}
+				}
 				else if (coordSystem->getState() == CoordSys::SET_GLOBAL_Y)
-					coordSystem->setGlobalKnownPointY(620);
+				{
+					double y = atof(coordSystem->getBuffer().c_str());
+					if (y != 0.0)
+					{
+						coordSystem->setGlobalKnownPointY(y);
+						printf("\n Known point Y:%f\n", y);
+					}
+					else
+					{
+						coordSystem->endCoordSetup();
+						coordSystem->startCoordSetup();
+					}
+				}
 				else if (coordSystem->getState() == CoordSys::GET_LOCAL_LINE_A)
 					coordSystem->setLocalLineA(imgProc->mParams.mouseXY);
 				else if (coordSystem->getState() == CoordSys::GET_LOCAL_LINE_B)
 					coordSystem->setLocalLineB(imgProc->mParams.mouseXY);
 				else if (coordSystem->getState() == CoordSys::SET_GLOBAL_AB)
 				{
-					coordSystem->setGlobalLineABLength(10);
+					double line = atof(coordSystem->getBuffer().c_str());
+					if (line != 0.0)
+					{
+						coordSystem->setGlobalLineABLength(line);
+					}
+					else
+					{
+						coordSystem->endCoordSetup();
+						coordSystem->startCoordSetup();
+					}
 				}
 
 				coordSystem->nextState();
@@ -327,7 +360,6 @@ int main(int argc, char *argv[])
 				{
 					coordSystem->setSetupDone();
 					coordSystem->endCoordSetup();
-					//printf("%f\n\n", coordSystem->localToGlobalLengthF(1));
 				}
 			}
 		}
