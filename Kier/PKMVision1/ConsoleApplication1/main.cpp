@@ -197,7 +197,6 @@ int main(int argc, char *argv[])
 							{
 								int timediff = tick - tick_before;
 								udp->sendPacket((int)(g_x * 10), (int)(g_y * 10), (int)((g_v * 10) / ((float)timediff / 1000)));
-								//printf("%f(x) %f(y) %f(v) %f(v/t)\n", g_x, g_y, g_v, (g_v / ((float)timediff / 1000)));
 							}
 							tick_before = tick;
 						}
@@ -314,7 +313,6 @@ int main(int argc, char *argv[])
 					if (x != 0.0)
 					{
 						coordSystem->setGlobalKnownPointX(x);
-						printf("\n Known point X:%f\n", x);
 					}
 					else
 					{
@@ -328,7 +326,6 @@ int main(int argc, char *argv[])
 					if (y != 0.0)
 					{
 						coordSystem->setGlobalKnownPointY(y);
-						printf("\n Known point Y:%f\n", y);
 					}
 					else
 					{
