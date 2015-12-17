@@ -196,7 +196,7 @@ int main(int argc, char *argv[])
 							if (tick_before != 0)
 							{
 								int timediff = tick - tick_before;
-								udp->sendPacket((int)(g_x * 1000), (int)(g_y*1000), g_v / ((float)timediff/1000));
+								udp->sendPacket((int)(g_x * 10), (int)(g_y * 10), (int)((g_v * 10) / ((float)timediff / 1000)));
 								//printf("%f(x) %f(y) %f(v) %f(v/t)\n", g_x, g_y, g_v, (g_v / ((float)timediff / 1000)));
 							}
 							tick_before = tick;
