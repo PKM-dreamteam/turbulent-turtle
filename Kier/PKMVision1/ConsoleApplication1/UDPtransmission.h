@@ -7,7 +7,7 @@
 
 #pragma comment(lib,"ws2_32.lib") //Winsock Library
 
-#define SERVER "127.0.0.1"  //ip address of udp server
+#define SERVER "192.168.210.105"  //ip address of udp server
 #define PORT 11000   //The port on which to listen for incoming data
 
 class UDPtrans
